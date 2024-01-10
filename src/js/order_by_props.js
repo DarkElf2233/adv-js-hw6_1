@@ -1,4 +1,4 @@
-export default function orderByProps(obj, sortOrder) {
+export default function orderByProps(obj, sortOrder = []) {
   const result = [];
   if (sortOrder) {
     for (const sortKey of sortOrder) {

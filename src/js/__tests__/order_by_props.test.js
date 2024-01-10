@@ -1,6 +1,6 @@
 import orderByProps from '../order_by_props';
 
-test('test orderByProps with sortOrder', () => {
+test('test orderByProps by given order', () => {
   const obj = {
     name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
   };
@@ -15,7 +15,7 @@ test('test orderByProps with sortOrder', () => {
   expect(result).toEqual(expected);
 });
 
-test('test orderByProps with empty sortOrder', () => {
+test('test orderByProps by default order', () => {
   const obj = {
     name: 'мечник', health: 10, level: 2, attack: 80, defence: 40,
   };
@@ -28,4 +28,9 @@ test('test orderByProps with empty sortOrder', () => {
     { key: 'name', value: 'мечник' },
   ];
   expect(result).toEqual(expected);
+});
+
+test('test orderByProps with empty object', () => {
+  const result = orderByProps({});
+  expect(result).toHaveLength(0);
 });
